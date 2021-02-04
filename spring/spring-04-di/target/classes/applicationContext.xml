@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.ren.pojo.Student">
+        <property name="name" value="Chenjun Ren"/>
+        <property name="address" ref="address"/>
+        <property name="books">
+            <array>
+                <value>GOT</value>
+                <value>The Witcher</value>
+            </array>
+        </property>
+        <property name="hobbies">
+            <list>
+                <value>Coding</value>
+                <value>Gaming</value>
+                <value>Watching Shows</value>
+            </list>
+        </property>
+        <property name="cards">
+            <map>
+                <entry key="ID" value="fjlkdsfjdslj"/>
+                <entry key="Student ID" value="fksdfklsdfl"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>RDR2</value>
+                <value>The Witcher 3</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null/>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="sex">male</prop>
+                <prop key="age">23</prop>
+                <prop key="university">York</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="address" class="com.ren.pojo.Address">
+        <property name="address" value="15 Greenview Ave."/>
+    </bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    Setter-based Dependency Injection-->
+    <!--<bean id="user" class="com.ren.pojo.User">
+        <property name="name" value="tony"/>
+    </bean>-->
+
+<!--    Constructor-based Dependency Injection-->
+    <!--<bean id="user" class="com.ren.pojo.User">
+        <constructor-arg index="0" value="tony"/>
+    </bean>-->
+
+    <!--<bean id="user" class="com.ren.pojo.User">
+        <constructor-arg type="java.lang.String" value="tonyren"/>
+    </bean>-->
+
+    <bean id="user" class="com.ren.pojo.User">
+        <constructor-arg name="name" value="tonyren"/>
+    </bean>
+
+    <!--name == alias-->
+    <bean id="userT" class="com.ren.pojo.UserT" name="user2,u2">
+        <property name="name" value="tony"/>
+    </bean>
+
+
+</beans>

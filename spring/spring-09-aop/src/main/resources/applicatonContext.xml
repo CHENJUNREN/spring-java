@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.ren.service.UserServiceImpl"/>
+    <bean id="log" class="com.ren.log.Log"/>
+
+    <!--spring aop-->
+    <!--<aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* com.ren.service.UserServiceImpl.*(..))"/>
+        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
+    </aop:config>-->
+
+    <!--customized aop-->
+    <!--<bean id="customizedLog" class="com.ren.log.CustomizedLog"/>
+    <aop:config>
+        <aop:aspect ref="customizedLog">
+            <aop:pointcut id="pointcut" expression="execution(* com.ren.service.UserServiceImpl.*(..))"/>
+            <aop:before method="before" pointcut-ref="pointcut"/>
+            <aop:after method="after" pointcut-ref="pointcut"/>
+        </aop:aspect>
+    </aop:config>-->
+
+    <!--annotation aop-->
+    <bean id="annotationLog" class="com.ren.log.AnnotationLog"/>
+    <!--  proxy-target-class="false"(jdk dynamic proxy)  -->
+    <!--  proxy-target-class="true"(cglib dynamic proxy)  -->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+
+</beans>
